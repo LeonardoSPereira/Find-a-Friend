@@ -10,7 +10,7 @@ export async function createOrg(request: FastifyRequest, reply: FastifyReply) {
     password: z.string().min(6),
     whatsapp: z.number().refine((value) => {
       const whatsappAsString = String(value);
-      return whatsappAsString.length === 9;
+      return whatsappAsString.length === 11;
     }),
     zip_code: z.number().refine((value) => {
       const zipCodeAsString = String(value);
