@@ -56,9 +56,9 @@ model Pet {
   energy_level PetEnergyLevel
   environment  String
   created_at   DateTime       @default(now())
-  org_Id       String
+  org_id       String
 
-  org Org @relation(fields: [org_Id], references: [id])
+  org Org @relation(fields: [org_id], references: [id])
 
   @@map("pets")
 }

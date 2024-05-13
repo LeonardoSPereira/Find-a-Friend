@@ -1,5 +1,5 @@
 import { beforeEach, describe, expect, it } from 'vitest'
-import { createOrgUseCase } from './create-org'
+import { CreateOrgUseCase } from './create-org'
 import { InMemoryOrgsRepository } from '@/repositories/in-memory/in-memory-orgs-repository'
 import { AuthenticateOrgUseCase } from './authenticate-org'
 import { hash } from 'bcryptjs'

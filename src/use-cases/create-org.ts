@@ -3,7 +3,7 @@ import { orgsRepository } from "@/repositories/orgs-repository";
 import { Org } from "@prisma/client";
 import { hash } from "bcryptjs";
 
-interface createOrgUseCaseRequest {
+interface CreateOrgUseCaseRequest {
   id?: string
   name: string
   author_name: string
@@ -19,14 +19,14 @@ interface createOrgUseCaseRequest {
   longitude: number
 }
 
-interface createOrgUseCaseResponse {
+interface CreateOrgUseCaseResponse {
   org: Org
 }
 
-export class createOrgUseCase {
+export class CreateOrgUseCase {
   constructor(private orgRepository: orgsRepository){}
 
-  async execute(data: createOrgUseCaseRequest): Promise<createOrgUseCaseResponse> {
+  async execute(data: CreateOrgUseCaseRequest): Promise<CreateOrgUseCaseResponse> {
     const orgAlreadyExists = await this.orgRepository.findOrgByEmail(data.email);
 
     if(orgAlreadyExists) {
