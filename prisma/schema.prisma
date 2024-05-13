@@ -25,15 +25,15 @@ enum PetEnergyLevel {
   HIGH
 }
 
-model ORG {
+model Org {
   id          String @id @default(uuid())
   name        String
   author_name String
   email       String @unique
-  whatsapp    String
+  whatsapp    Int
   password    String
 
-  zip_code     String
+  zip_code     Int
   state        String
   city         String
   neighborhood String
@@ -58,7 +58,7 @@ model Pet {
   created_at   DateTime       @default(now())
   org_Id       String
 
-  org ORG @relation(fields: [org_Id], references: [id])
+  org Org @relation(fields: [org_Id], references: [id])
 
   @@map("pets")
 }
