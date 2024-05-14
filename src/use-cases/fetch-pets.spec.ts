@@ -1,21 +1,21 @@
 import { beforeEach, describe, expect, it } from 'vitest'
 import { InMemoryOrgsRepository } from '@/repositories/in-memory/in-memory-orgs-repository'
 import { InMemoryPetsRepository } from '@/repositories/in-memory/in-memory-pets-repository'
-import { GetPetsUseCase } from './get-pets'
+import { FetchPetsUseCase } from './fetch-pets'
 import { ResourceNotFoundError } from './errors/resource-not-found-error'
 
-describe('Get pets', () => {
+describe('Fetch pets', () => {
   let orgsRepository: InMemoryOrgsRepository
   let petsRepository: InMemoryPetsRepository
-  let sut: GetPetsUseCase
+  let sut: FetchPetsUseCase
 
   beforeEach(() => {
     orgsRepository = new InMemoryOrgsRepository()
     petsRepository = new InMemoryPetsRepository(orgsRepository)
-    sut = new GetPetsUseCase(petsRepository)
+    sut = new FetchPetsUseCase(petsRepository)
   })
 
-  it('should be able to get pets', async () => {
+  it('should be able to fetch pets', async () => {
     // Create an org
     const orgCreateResponse = await orgsRepository.create({
       name: 'Org Name',
@@ -103,7 +103,7 @@ describe('Get pets', () => {
     ])
   })
 
-  it('should not be able to fetch pets by city if orgs not found', async () => {
+  it('should not be able to fetch pets if orgs not found', async () => {
     await orgsRepository.create({
       name: 'Org Name',
       author_name: 'Author Name',
