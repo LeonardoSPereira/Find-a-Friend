@@ -1,5 +1,4 @@
 import { Prisma } from "@prisma/client";
-import { Decimal } from "@prisma/client/runtime/library";
 import { orgsRepository } from "../orgs-repository";
 import { prisma } from "@/lib/prisma";
 
@@ -8,7 +7,7 @@ export class PrismaOrgsRepository implements orgsRepository {
     const org = await prisma.org.create({
       data
     })
-
+    
     return org
   }
 

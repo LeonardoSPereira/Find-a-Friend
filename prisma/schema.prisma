@@ -30,7 +30,7 @@ model Org {
   name        String
   author_name String
   email       String @unique
-  whatsapp    Int
+  whatsapp    BigInt
   password    String
 
   zip_code     Int

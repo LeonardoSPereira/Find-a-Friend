@@ -28,7 +28,7 @@ export class CreateOrgUseCase {
 
   async execute(data: CreateOrgUseCaseRequest): Promise<CreateOrgUseCaseResponse> {
     const orgAlreadyExists = await this.orgRepository.findOrgByEmail(data.email);
-
+  
     if(orgAlreadyExists) {
       throw new OrgAlreadyExistsError();
     }
@@ -50,6 +50,9 @@ export class CreateOrgUseCase {
       latitude: data.latitude,
       longitude: data.longitude
     })
+
+    console.log(org);
+    
 
     return {
       org
