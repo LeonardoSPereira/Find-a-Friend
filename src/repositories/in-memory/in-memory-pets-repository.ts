@@ -3,9 +3,6 @@ import { PetResponseProps, PetsRepository, SearchPetsProps } from "../pets-repos
 import { randomUUID } from "node:crypto";
 import { orgsRepository } from "../orgs-repository";
 
-
-
-
 export class InMemoryPetsRepository implements PetsRepository {
   constructor(private orgsRepository: orgsRepository) {}
 

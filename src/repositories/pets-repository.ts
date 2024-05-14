@@ -1,4 +1,5 @@
 import { Org, Pet, Prisma } from "@prisma/client";
+import { Decimal } from "@prisma/client/runtime/library";
 
 export interface SearchPetsProps {
   city: string
@@ -10,7 +11,18 @@ export interface SearchPetsProps {
 }
 
 interface OrgResponseProps {
-  org: Omit<Org, "password">;
+  id: string
+  name: string
+  author_name: string
+  email: string
+  whatsapp: number
+  zip_code: number
+  state: string
+  city: string
+  neighborhood: string
+  street: string
+  latitude: Decimal
+  longitude: Decimal
 }
 
 export interface PetResponseProps {
