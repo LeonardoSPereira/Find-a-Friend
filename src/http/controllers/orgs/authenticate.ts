@@ -24,8 +24,26 @@ export async function authenticateOrg(request: FastifyRequest, reply: FastifyRep
         }
       }
     )
+
+    const refreshToken = await reply.jwtSign(
+      {},
+      {
+        sign: {
+          sub: org.id,
+          expiresIn: '7d'
+        }
+      }
+    )
     
-    return reply.status(200).send({ token })
+    return reply
+      .setCookie('refreshToken', refreshToken, {
+        path: '/',
+        httpOnly: true,
+        secure: true,
+        sameSite: true
+      })
+      .status(200)
+      .send({ token })
   } catch (error) {
     if(error instanceof InvalidCredentialsError) {
       return reply.status(401).send({ message: error.message })

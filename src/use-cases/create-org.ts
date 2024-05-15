@@ -51,9 +51,6 @@ export class CreateOrgUseCase {
       longitude: data.longitude
     })
 
-    console.log(org);
-    
-
     return {
       org
     }
