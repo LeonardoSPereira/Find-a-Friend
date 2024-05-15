@@ -15,7 +15,7 @@ interface OrgResponseProps {
   name: string
   author_name: string
   email: string
-  whatsapp: number
+  whatsapp: bigint
   zip_code: number
   state: string
   city: string

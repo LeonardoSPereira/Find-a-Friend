@@ -1,8 +1,5 @@
 import { beforeEach, describe, expect, it } from 'vitest'
-import { CreateOrgUseCase } from './create-org'
 import { InMemoryOrgsRepository } from '@/repositories/in-memory/in-memory-orgs-repository'
-import { OrgAlreadyExistsError } from './errors/org-already-exists-error'
-import { compare } from 'bcryptjs'
 import { InMemoryPetsRepository } from '@/repositories/in-memory/in-memory-pets-repository'
 import { CreatePetUseCase } from './create-pet'
 import { ResourceNotFoundError } from './errors/resource-not-found-error'
@@ -24,7 +21,7 @@ describe('Create Pet', () => {
       author_name: 'Author Name',
       email: 'org@email.com',
       password: 'password',
-      whatsapp: 11912345678,
+      whatsapp: BigInt(11912345678),
       zip_code: 12345678,
       state: 'State',
       city: 'City',
@@ -41,7 +38,6 @@ describe('Create Pet', () => {
       size: 'SMALL',
       environment: 'Environment',
       energy_level: 'LOW',
-      created_at: new Date(),
       org_id: orgCreateResponse.id
     })
 

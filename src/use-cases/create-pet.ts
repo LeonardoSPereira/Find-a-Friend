@@ -11,7 +11,6 @@ interface CreatePetUseCaseRequest {
   size: 'SMALL' | 'MEDIUM' | 'LARGE',
   environment: string,
   energy_level: 'LOW' | 'MEDIUM' | 'HIGH',
-  created_at: Date,
   org_id: string
 }
 
