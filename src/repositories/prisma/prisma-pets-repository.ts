@@ -50,7 +50,33 @@ export class PrismaPetsRepository implements PetsRepository {
       }
     })
 
-    return pets;
+    const petsResponse = pets.map(pet => {
+      return {
+        id: pet.id,
+        name: pet.name,
+        about: pet.about,
+        age: pet.age,
+        size: pet.size,
+        energy_level: pet.energy_level,
+        environment: pet.environment,
+        org: {
+          id: pet.org.id,
+          name: pet.org.name,
+          author_name: pet.org.author_name,
+          email: pet.org.email,
+          whatsapp: Number(pet.org.whatsapp),
+          zip_code: pet.org.zip_code,
+          state: pet.org.state,
+          city: pet.org.city,
+          neighborhood: pet.org.neighborhood,
+          street: pet.org.street,
+          latitude: pet.org.latitude,
+          longitude: pet.org.longitude
+        }
+      }
+    })
+
+    return petsResponse;
   }
 
   async findPetById(id: string) {

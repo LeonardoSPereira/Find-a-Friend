@@ -14,8 +14,8 @@ export async function createAndAuthenticateOrg(app: FastifyInstance) {
       password: hashedPassword,
       whatsapp: 71887404932,
       zip_code: 12345678,
-      state: "State",
-      city: "City",
+      state: "Martinique",
+      city: "Deconah",
       neighborhood: "Neighborhood",
       street: "Street",
       latitude: -60,
@@ -32,5 +32,10 @@ export async function createAndAuthenticateOrg(app: FastifyInstance) {
 
   const { token } = authResponse.body
 
-  return { orgId: org.id, token }
+  return {
+    orgId: org.id,
+    orgCity: org.city,
+    orgState: org.state,
+    token
+  }
 }
