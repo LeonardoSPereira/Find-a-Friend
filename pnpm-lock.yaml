@@ -53,7 +53,7 @@ importers:
         version: 5.16.0
       tsup:
         specifier: ^8.0.2
-        version: 8.1.1(postcss@8.4.39)(tsx@4.12.0)(typescript@5.5.3)(yaml@2.4.3)
+        version: 8.1.2(postcss@8.4.39)(tsx@4.12.0)(typescript@5.5.3)(yaml@2.4.3)
       tsx:
         specifier: ^4.10.2
         version: 4.12.0
@@ -1674,8 +1674,8 @@ packages:
       typescript:
         optional: true
 
-  tsup@8.1.1:
-    resolution: {integrity: sha512-lLXP3BshJ6y/32b3tPZUB2siD2mkJ6mLzhbPOShfjogSc3aRw8MhbBV4cPKbqkbXuhsJR+c9B0W9RHMbtbXLMQ==}
+  tsup@8.1.2:
+    resolution: {integrity: sha512-Gzw/PXSX/z0aYMNmkcI54bKKFVFJQbLne+EqTJZeQ3lNT3QpumjtMU4rl+ZwTTp8oRF3ahMbEAxT2sZPJLFSrg==}
     engines: {node: '>=18'}
     hasBin: true
     peerDependencies:
@@ -3247,7 +3247,7 @@ snapshots:
     optionalDependencies:
       typescript: 5.5.3
 
-  tsup@8.1.1(postcss@8.4.39)(tsx@4.12.0)(typescript@5.5.3)(yaml@2.4.3):
+  tsup@8.1.2(postcss@8.4.39)(tsx@4.12.0)(typescript@5.5.3)(yaml@2.4.3):
     dependencies:
       bundle-require: 5.0.0(esbuild@0.23.0)
       cac: 6.7.14
